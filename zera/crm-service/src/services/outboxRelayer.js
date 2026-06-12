@@ -46,8 +46,8 @@ async function processOutbox() {
       });
     }
   } catch (err) {
-    console.error('[OutboxRelayer] Error processing outbox events:', err.message);
-    logEvent('SYSTEM', `Outbox Relayer encounters issue connecting to message broker: ${err.message}. Retrying...`);
+    console.error('[OutboxRelayer] Error processing outbox events:', err);
+    logEvent('SYSTEM', `Outbox Relayer encounters issue: ${err.message || err.toString()}. Retrying...`);
   }
 
   // Schedule the next poll iteration
