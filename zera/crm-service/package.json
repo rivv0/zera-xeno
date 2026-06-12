@@ -1,0 +1,28 @@
+{
+  "name": "crm-service",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zera AI-native mini CRM service",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --env-file=../../.env src/index.js",
+    "dev": "node --env-file=../../.env --watch src/index.js",
+    "seed": "node --env-file=../../.env src/db/seed.js",
+    "test": "vitest --run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.55.0",
+    "bullmq": "^5.0.0",
+    "express": "^4.21.0",
+    "ioredis": "^5.4.0",
+    "knex": "^3.1.0",
+    "node-cron": "^3.0.3",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^3.0.0",
+    "fast-check": "^3.23.0",
+    "supertest": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}
