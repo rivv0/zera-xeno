@@ -357,7 +357,7 @@ export async function resolveNLSegment(description) {
         return res.json();
       });
 
-      const response = await withTimeout(apiCall, 10000, `resolveNLSegment (${config.type})`);
+      const response = await withTimeout(apiCall, 25000, `resolveNLSegment (${config.type})`);
       raw = response.choices[0]?.message?.content ?? '';
     } else {
       const apiCall = client.messages.create({
@@ -367,7 +367,7 @@ export async function resolveNLSegment(description) {
         messages: [{ role: 'user', content: description }],
       });
 
-      const response = await withTimeout(apiCall, 10000, 'resolveNLSegment');
+      const response = await withTimeout(apiCall, 25000, 'resolveNLSegment');
       raw = response.content[0]?.text ?? '';
     }
   } catch (err) {

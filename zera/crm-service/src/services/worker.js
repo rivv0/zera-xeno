@@ -60,6 +60,7 @@ worker.on('failed', async (job, err) => {
   if (!job) return;
 
   const { commId } = job.data;
+  console.error(`[worker] Job ${job.id} for commId=${commId} failed after all attempts:`, err);
 
   try {
     await pool.query(
