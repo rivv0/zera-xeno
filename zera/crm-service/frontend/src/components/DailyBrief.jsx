@@ -393,7 +393,7 @@ function DailyBrief() {
                 />
                 <button
                   onClick={() => triggerFastForward(parseInt(customDays, 10))}
-                  disabled={simulating || !customDays || isNaN(parseInt(customDays, 10)) || parseInt(customDays, 10) <= 0}
+                  disabled={simulating || !customDays || isNaN(parseInt(customDays, 10)) || parseInt(customDays, 10) === 0}
                   className="btn btn-primary"
                   style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
                 >

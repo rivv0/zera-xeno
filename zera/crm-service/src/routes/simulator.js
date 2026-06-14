@@ -24,8 +24,8 @@ const BASELINES = {
 router.post('/fast-forward', async (req, res) => {
   const days = parseInt(req.body.days, 10);
 
-  if (isNaN(days) || days <= 0) {
-    return res.status(400).json({ error: 'days must be a positive integer.' });
+  if (isNaN(days) || days === 0) {
+    return res.status(400).json({ error: 'days must be a non-zero integer.' });
   }
 
   const client = await pool.connect();
